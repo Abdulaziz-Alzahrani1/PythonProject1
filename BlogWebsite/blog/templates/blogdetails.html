@@ -1,0 +1,22 @@
+<!-- blogdetails.html -->
+{% extends 'master.html' %}
+
+{% block title %}Blog Details{% endblock %}
+
+{% block content %}
+    <h2>Blog Details</h2>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+    <p>Category: {{ post.category }}</p>
+    <p>Date Published: {{ post.date_published }}</p>
+    <h4>Comments:</h4>
+    <ul>
+        {% if comments %}
+            {% for comment in comments %}
+                <li>{{ comment.content }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No comments yet.</li>
+        {% endif %}
+    </ul>
+{% endblock %}

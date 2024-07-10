@@ -1,0 +1,13 @@
+<!-- categories.html -->
+{% extends 'master.html' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+    <h2>List of Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
